@@ -342,18 +342,21 @@
 </head>
 
 <body>
-    <!-- Include header component -->
-    <header class="main-header full-width">
-        <div class="header-content">
-            <div class="logo">
-                <a href="../index.html">
-                    <span class="gradient-text">Ajeet Kumar</span>
-                </a>
-            </div>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="main-wrapper">
+        <!-- Sidebar Component -->
+        <aside class="sidebar">
+            <!-- Add mobile menu toggle button -->
+            <button class="sidebar-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav class="header-nav">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="../assets/images/Ajeet_Photo.jpeg" alt="Ajeet Kumar">
+                </div>
+                <h1 class="name">Ajeet Kumar</h1>
+                <p class="title">Python Developer</p>
+            </div>
+            <nav class="nav-links" aria-label="Main Navigation">
                 <ul>
                     <li><a href="../index.html" data-page="home" class="nav-link">Home</a></li>
                     <li><a href="about.html" data-page="about" class="nav-link">About</a></li>
@@ -363,15 +366,44 @@
                     <li><a href="contact.html" data-page="contact" class="nav-link active">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
-        </div>
-    </header>
+        </aside>
 
-    <div class="about-container">
+        <div class="main-content">
+            <!-- Include header component -->
+            <header class="main-header full-width">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <span class="gradient-text">Ajeet Kumar</span>
+                        </a>
+                    </div>
+                    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <nav class="header-nav">
+                        <ul>
+                            <li><a href="../index.html" data-page="home" class="nav-link">Home</a></li>
+                            <li><a href="about.html" data-page="about" class="nav-link">About</a></li>
+                            <li><a href="resume.html" data-page="resume" class="nav-link">Resume</a></li>
+                            <li><a href="services.html" data-page="services" class="nav-link">Services</a></li>
+                            <li><a href="portfolio.html" data-page="portfolio" class="nav-link">Portfolio</a></li>
+                            <li><a href="contact.html" data-page="contact" class="nav-link active">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-actions">
+                        <button class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="about-container">
         <div class="hero-section">
             <div class="hero-content">
                 <div class="hero-icon">
@@ -500,6 +532,44 @@
         });
     </script>
     <script src="../assets/js/header.js"></script>
+        </div> <!-- Close main-content -->
+    </div> <!-- Close main-wrapper -->
+    
+    <script>
+    // Responsive sidebar toggle
+    document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('sidebar-open');
+        document.body.classList.toggle('menu-open');
+    });
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        
+        if (window.innerWidth < 992 && 
+            sidebar.classList.contains('sidebar-open') && 
+            !sidebar.contains(event.target) && 
+            event.target !== sidebarToggle) {
+            sidebar.classList.remove('sidebar-open');
+            document.body.classList.remove('menu-open');
+        }
+    });
+    
+    // Initialize sidebar position for mobile
+    function initMobileLayout() {
+        const sidebar = document.querySelector('.sidebar');
+        if (window.innerWidth < 992) {
+            sidebar.classList.remove('sidebar-open');
+        } else {
+            sidebar.classList.remove('sidebar-open'); // Reset sidebar state on larger screens
+        }
+    }
+    
+    // Run on page load and resize
+    window.addEventListener('load', initMobileLayout);
+    window.addEventListener('resize', initMobileLayout);
+    </script>
 </body>
 
 </html>

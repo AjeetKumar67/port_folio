@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional resume of Ajeet Kumar, Python Software Developer with experience in Django, Flask, and RESTful API development">
     <title>Resume - Ajeet Kumar</title>
     <!-- Component CSS files -->
     <link rel="stylesheet" href="../assets/css/header-component.css">
@@ -14,624 +15,56 @@
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/mobile-fixes.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        /* Resume-specific styles */
-        .resume-container {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .resume-wrapper {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .resume-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .resume-column {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .resume-section {
-            margin-bottom: 40px;
-        }
-        
-        .resume-section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .resume-section-title i {
-            font-size: 24px;
-            margin-right: 15px;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-color, #3498db), var(--secondary-color, #2ecc71));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .resume-section-title h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--text-color, #333);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding: 0 0 0 30px;
-            margin-bottom: 30px;
-        }
-        
-        .timeline-item:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(var(--primary-color, #3498db), var(--secondary-color, #2ecc71));
-        }
-        
-        .timeline-item:after {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary-color, #3498db);
-        }
-        
-        .timeline-date {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--card-bg, #f8f9fa);
-            border-radius: 20px;
-            font-size: 14px;
-            color: var(--text-muted, #666);
-            margin-bottom: 10px;
-        }
-        
-        .timeline-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text-color, #333);
-        }
-        
-        .timeline-subtitle {
-            font-size: 16px;
-            color: var(--primary-color, #3498db);
-            margin-bottom: 10px;
-        }
-        
-        .timeline-content {
-            font-size: 15px;
-            color: var(--text-muted, #666);
-            line-height: 1.6;
-        }
-        
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .skill-item {
-            padding: 8px 16px;
-            background: var(--card-bg, #f8f9fa);
-            border-radius: 20px;
-            color: var(--text-color, #333);
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            background: linear-gradient(to right, var(--primary-color, #3498db), var(--secondary-color, #2ecc71));
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .download-resume {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 25px;
-            background: linear-gradient(to right, var(--primary-color, #3498db), var(--secondary-color, #2ecc71));
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
-        }
-        
-        .download-resume i {
-            margin-right: 10px;
-        }
-        
-        .download-resume:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
-        }
-        
-        /* Enhanced Visual Styles */
-        :root {
-            --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            --gradient-secondary: linear-gradient(135deg, #007adf 0%, #00ecbc 100%);
-            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.12);
-            --shadow-hard: 0 20px 40px rgba(0, 0, 0, 0.16);
-            --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        /* Body and Container Enhancements */
-        body {
-            background-color: #f9fafc;
-            background-image: 
-                radial-gradient(at 10% 10%, rgba(178, 224, 255, 0.1) 0px, transparent 50%),
-                radial-gradient(at 90% 90%, rgba(233, 156, 255, 0.1) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
-        
-        .resume-container {
-            position: relative;
-        }
-        
-        .resume-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background-image: radial-gradient(circle at right top, rgba(52, 152, 219, 0.05), transparent 70%);
-            z-index: -1;
-        }
-        
-        .resume-wrapper {
-            box-shadow: var(--shadow-soft);
-            background-color: rgba(255, 255, 255, 0.98);
-            border-radius: 15px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            transition: var(--transition-smooth);
-        }
-        
-        .resume-wrapper:hover {
-            box-shadow: var(--shadow-medium);
-            transform: translateY(-5px);
-        }
-        
-        /* Section Header Enhancements */
-        .about-header h1 {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-            position: relative;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .about-header h1::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 4px;
-            width: 60px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-        
-        /* Section Enhancements */
-        .resume-section {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition-smooth);
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .resume-section:hover {
-            box-shadow: var(--shadow-medium);
-            transform: translateY(-3px);
-        }
-        
-        .resume-section-title {
-            padding: 20px 25px;
-            background: white;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .resume-section-title i {
-            background: var(--gradient-secondary);
-            box-shadow: 0 5px 15px rgba(0, 122, 223, 0.3);
-        }
-        
-        /* Timeline Enhancements */
-        .timeline-item {
-            transition: var(--transition-smooth);
-        }
-        
-        .timeline-item:hover {
-            transform: translateX(5px);
-        }
-        
-        .timeline-item:before {
-            background: var(--gradient-secondary);
-            box-shadow: 0 0 0 4px rgba(0, 122, 223, 0.1);
-        }
-        
-        .timeline-item:after {
-            background: white;
-            border: 3px solid #00aeff;
-            box-shadow: 0 0 0 4px rgba(0, 174, 255, 0.1);
-        }
-        
-        .timeline-date {
-            background: linear-gradient(to right, #f1f5f9, #e2e8f0);
-            border-left: 3px solid #00aeff;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        .timeline-title {
-            color: #1e40af;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: var(--transition-smooth);
-        }
-        
-        .timeline-item:hover .timeline-title {
-            color: #00aeff;
-        }
-        
-        .timeline-subtitle {
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 500;
-        }
-        
-        /* Skills Enhancements */
-        .skill-list {
-            margin-top: 20px;
-            gap: 12px;
-        }
-        
-        .skill-item {
-            background: white;
-            border: 1px solid #e2e8f0;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-            transition: var(--transition-smooth);
-        }
-        
-        .skill-item:hover {
-            background: var(--gradient-secondary);
-            border-color: transparent;
-            color: white;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 174, 255, 0.2);
-        }
-        
-        /* Profile Content Enhancements */
-        .profile-content {
-            padding: 25px 30px;
-            line-height: 1.8;
-            color: #334155;
-        }
-        
-        .profile-content p {
-            margin-bottom: 20px;
-            font-size: 16px;
-            font-weight: 400;
-            text-align: justify;
-            letter-spacing: 0.2px;
-        }
-        
-        /* Cover Letter Enhancements */
-        .cover-letter {
-            padding: 25px 30px;
-            background: white;
-            border-radius: 8px;
-            position: relative;
-        }
-        
-        .cover-letter::before {
-            content: "";
-            position: absolute;
-            top: 40px;
-            right: 30px;
-            width: 80px;
-            height: 80px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 5C19.89 4.65 18.67 4.5 17.5 4.5C15.55 4.5 13.45 4.9 12 6C10.55 4.9 8.45 4.5 6.5 4.5C4.55 4.5 2.45 4.9 1 6V20.65C1 20.9 1.25 21.15 1.5 21.15C1.6 21.15 1.65 21.1 1.75 21.1C3.1 20.45 5.05 20 6.5 20C8.45 20 10.55 20.4 12 21.5C13.35 20.65 15.8 20 17.5 20C19.15 20 20.85 20.3 22.25 21.05C22.35 21.1 22.4 21.1 22.5 21.1C22.75 21.1 23 20.85 23 20.6V6C22.4 5.55 21.75 5.25 21 5ZM21 18.5C19.9 18.15 18.7 18 17.5 18C15.8 18 13.35 18.65 12 19.5V8C13.35 7.15 15.8 6.5 17.5 6.5C18.7 6.5 19.9 6.65 21 7V18.5Z'%3E%3C/path%3E%3C/svg%3E");
-            opacity: 0.1;
-            background-repeat: no-repeat;
-            background-size: contain;
-            pointer-events: none;
-        }
-        
-        .letter-header, .letter-body, .letter-footer {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .letter-date {
-            font-size: 14px;
-            font-weight: 500;
-            color: #64748b;
-            letter-spacing: 0.5px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        
-        .letter-header p:last-child {
-            font-weight: 600;
-            font-size: 18px;
-            color: #1e293b;
-            margin-bottom: 20px;
-        }
-        
-        .letter-body p {
-            margin-bottom: 18px;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #334155;
-            letter-spacing: 0.2px;
-            text-align: justify;
-        }
-        
-        .letter-body ul {
-            margin: 25px 0;
-            padding-left: 20px;
-            border-left: 3px solid #e2e8f0;
-        }
-        
-        .letter-body ul li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 20px;
-            font-size: 15px;
-            color: #334155;
-        }
-        
-        .letter-body ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        
-        .letter-footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .letter-footer p:first-child {
-            margin-bottom: 10px;
-            font-style: italic;
-            color: #64748b;
-        }
-        
-        .letter-footer p:last-child {
-            font-weight: 600;
-            font-size: 18px;
-            color: #1e293b;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 3px;
-        }
-        
-        .letter-footer p:last-child::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 100%;
-            background: var(--gradient-secondary);
-            border-radius: 1px;
-        }
-        
-        /* Download Button Enhancement */
-        .text-center {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .download-resume {
-            background: white;
-            color: #1e40af;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 14px 30px;
-            font-size: 16px;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .download-resume::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--gradient-secondary);
-            transition: 0.5s ease;
-            z-index: -1;
-        }
-        
-        .download-resume:hover {
-            color: white;
-            border-color: transparent;
-            transform: translateY(-5px);
-        }
-        
-        .download-resume:hover::before {
-            width: 100%;
-        }
-        
-        .download-resume i {
-            transition: transform 0.3s ease;
-        }
-        
-        .download-resume:hover i {
-            transform: translateY(2px);
-        }
-        
-        /* Animation Effects */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .resume-section {
-            animation: fadeIn 0.6s ease forwards;
-            opacity: 0;
-        }
-        
-        .resume-section:nth-child(1) { animation-delay: 0.1s; }
-        .resume-section:nth-child(2) { animation-delay: 0.3s; }
-        .resume-section:nth-child(3) { animation-delay: 0.5s; }
-        .resume-section:nth-child(4) { animation-delay: 0.7s; }
-        
-        /* Add glowing effect to skills on hover */
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(0, 174, 255, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(0, 174, 255, 0.8); }
-            100% { box-shadow: 0 0 5px rgba(0, 174, 255, 0.5); }
-        }
-        
-        .skill-item:hover {
-            animation: glow 1.5s infinite;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-            background-color: #f5f5f5;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #3b82f6, #06b6d4);
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #2563eb, #0891b2);
-        }
-        
-        @media (max-width: 768px) {
-            .resume-content {
-                flex-direction: column;
-                gap: 20px;
+    <!-- Enhanced resume styles -->
+    <link rel="stylesheet" href="../assets/css/resume-enhanced.css">
+    <!-- Font Awesome for icons (using more secure CDN) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+    <!-- Fallback for Font Awesome if the kit doesn't load -->
+    <script>
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'SCRIPT' && e.target.src.includes('fontawesome')) {
+                const fallbackLink = document.createElement('link');
+                fallbackLink.rel = 'stylesheet';
+                fallbackLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+                document.head.appendChild(fallbackLink);
             }
-            
-            .resume-column {
-                min-width: 100%;
-            }
-            
-            .about-header h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-content, .cover-letter {
-                padding: 20px;
-            }
-            
-            .resume-section-title i {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-            
-            .resume-section-title h2 {
-                font-size: 20px;
-            }
-            
-            .letter-body ul {
-                padding-left: 15px;
-            }
-            
-            .letter-body ul li {
-                padding-left: 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .resume-wrapper {
-                padding: 15px;
-            }
-            
-            .about-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .skill-list {
-                gap: 8px;
-            }
-            
-            .skill-item {
-                padding: 6px 14px;
-                font-size: 13px;
-            }
-            
-            .timeline-title {
-                font-size: 16px;
-            }
-            
-            .timeline-subtitle {
-                font-size: 14px;
-            }
-            
-            .timeline-content p {
-                font-size: 14px;
-            }
-        }
-    </style>
+        }, true);
+    </script>
 </head>
 <body>
-    <header class="main-header full-width">
+    <div class="main-wrapper">
+        <!-- Sidebar Component -->
+        <aside class="sidebar">
+            <!-- Add mobile menu toggle button -->
+            <button class="sidebar-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="../assets/images/Ajeet_Photo.jpeg" alt="Ajeet Kumar">
+                </div>
+                <h1 class="name">Ajeet Kumar</h1>
+                <p class="title">Python Developer</p>
+            </div>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="../index.html" data-page="home" class="nav-link">Home</a></li>
+                    <li><a href="about.html" data-page="about" class="nav-link">About</a></li>
+                    <li><a href="resume.html" data-page="resume" class="nav-link active">Resume</a></li>
+                    <li><a href="services.html" data-page="services" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" data-page="portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="contact.html" data-page="contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header full-width" role="banner">
         <div class="header-content">
             <div class="logo">
                 <a href="../index.html">
@@ -639,9 +72,9 @@
                 </a>
             </div>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            <nav class="header-nav">
+            <nav class="header-nav" role="navigation">
                 <ul>
                     <li><a href="../index.html" data-page="home" class="nav-link">Home</a></li>
                     <li><a href="about.html" data-page="about" class="nav-link">About</a></li>
@@ -652,44 +85,43 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <div class="resume-container">
+    <main class="resume-container">
         <div class="resume-wrapper">
             <div class="about-header">
-                <!-- <h2 class="section-title">RESUME</h2> -->
                 <h1>MY EXPERIENCE</h1>
             </div>
             
             <!-- Professional Self-Introduction -->
-            <div class="resume-section">
+            <section class="resume-section" aria-labelledby="profile-heading">
                 <div class="resume-section-title">
-                    <i class="fas fa-user"></i>
-                    <h2>Professional Profile</h2>
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <h2 id="profile-heading">Professional Profile</h2>
                 </div>
                 <div class="profile-content">
                     <p>Dedicated Python Software Developer with a Master's in Computer Applications (MCA) and 3+ years of experience building robust backend systems and scalable web applications. Specialized in Django, Flask, and RESTful API development with a strong foundation in database design and cloud infrastructure. Passionate about clean code, test-driven development, and creating efficient solutions to complex problems. Committed to continuous learning and staying current with emerging technologies in the Python ecosystem.</p>
                     
-                    <div class="skill-list" style="margin-top: 20px;">
-                        <span class="skill-item"><i class="fas fa-check-circle"></i> Backend Development</span>
-                        <span class="skill-item"><i class="fas fa-check-circle"></i> API Design</span>
-                        <span class="skill-item"><i class="fas fa-check-circle"></i> Database Architecture</span>
-                        <span class="skill-item"><i class="fas fa-check-circle"></i> Cloud Solutions</span>
-                        <span class="skill-item"><i class="fas fa-check-circle"></i> System Integration</span>
+                    <div class="skill-list">
+                        <span class="skill-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Backend Development</span>
+                        <span class="skill-item"><i class="fas fa-check-circle" aria-hidden="true"></i> API Design</span>
+                        <span class="skill-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Database Architecture</span>
+                        <span class="skill-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Cloud Solutions</span>
+                        <span class="skill-item"><i class="fas fa-check-circle" aria-hidden="true"></i> System Integration</span>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <!-- Cover Letter Section -->
-            <div class="resume-section">
+            <section class="resume-section" aria-labelledby="cover-letter-heading">
                 <div class="resume-section-title">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <h2>Cover Letter</h2>
+                    <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+                    <h2 id="cover-letter-heading">Cover Letter</h2>
                 </div>
                 <div class="cover-letter">
                     <div class="letter-header">
@@ -720,89 +152,89 @@
                         <p>Ajeet Kumar</p>
                     </div>
                 </div>
-            </div>
+            </section>
             
             <div class="text-center">
-                <a href="../assets/files/ajeet_kumar_resume.pdf" download class="download-resume">
-                    <i class="fas fa-download"></i> Download Resume
+                <a href="../assets/files/ajeet_kumar_resume.pdf" download class="download-resume" aria-label="Download Resume">
+                    <i class="fas fa-download" aria-hidden="true"></i> Download Resume
                 </a>
             </div>
 
             <div class="resume-content">
                 <div class="resume-column">
                     <!-- Experience Section -->
-                    <div class="resume-section">
+                    <section class="resume-section" aria-labelledby="experience-heading">
                         <div class="resume-section-title">
-                            <i class="fas fa-briefcase"></i>
-                            <h2>Work Experience</h2>
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
+                            <h2 id="experience-heading">Work Experience</h2>
                         </div>
                         
                         <!-- Experience Item 1 -->
-                        <div class="timeline-item">
+                        <article class="timeline-item">
                             <div class="timeline-date">2020 - Present</div>
                             <h3 class="timeline-title">Senior Python Developer</h3>
                             <div class="timeline-subtitle">Tech Solutions Inc.</div>
                             <div class="timeline-content">
                                 <p>Lead developer for enterprise web applications using Django and Flask. Implemented RESTful APIs, database optimization, and CI/CD pipelines. Mentored junior developers and conducted code reviews.</p>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Experience Item 2 -->
-                        <div class="timeline-item">
+                        <article class="timeline-item">
                             <div class="timeline-date">2018 - 2020</div>
                             <h3 class="timeline-title">Python Backend Developer</h3>
                             <div class="timeline-subtitle">Innovative Systems Ltd.</div>
                             <div class="timeline-content">
                                 <p>Developed and maintained backend services for e-commerce platforms. Implemented payment integrations, recommendation engines, and data processing pipelines.</p>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Experience Item 3 -->
-                        <div class="timeline-item">
+                        <article class="timeline-item">
                             <div class="timeline-date">2016 - 2018</div>
                             <h3 class="timeline-title">Junior Developer</h3>
                             <div class="timeline-subtitle">Digital Solutions Group</div>
                             <div class="timeline-content">
                                 <p>Worked on web application development using Python and JavaScript. Assisted in database design and implementation. Participated in agile development processes.</p>
                             </div>
-                        </div>
-                    </div>
+                        </article>
+                    </section>
                 </div>
                 
                 <div class="resume-column">
                     <!-- Education Section -->
-                    <div class="resume-section">
+                    <section class="resume-section" aria-labelledby="education-heading">
                         <div class="resume-section-title">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h2>Education</h2>
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            <h2 id="education-heading">Education</h2>
                         </div>
                         
                         <!-- Education Item 1 -->
-                        <div class="timeline-item">
+                        <article class="timeline-item">
                             <div class="timeline-date">2012 - 2016</div>
                             <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
                             <div class="timeline-subtitle">University of Technology</div>
                             <div class="timeline-content">
                                 <p>Graduated with honors. Specialized in software engineering and data structures. Completed thesis on optimizing database queries for large datasets.</p>
                             </div>
-                        </div>
+                        </article>
                         
                         <!-- Education Item 2 -->
-                        <div class="timeline-item">
+                        <article class="timeline-item">
                             <div class="timeline-date">2010 - 2012</div>
                             <h3 class="timeline-title">Associate Degree in Information Technology</h3>
                             <div class="timeline-subtitle">Community College</div>
                             <div class="timeline-content">
                                 <p>Focused on programming fundamentals and web development. Participated in coding competitions and hackathons.</p>
                             </div>
-                        </div>
-                    </div>
+                        </article>
+                    </section>
                     
                     <!-- Skills Section -->
-                    <div class="resume-section">
+                    <section class="resume-section" aria-labelledby="skills-heading">
                         <div class="resume-section-title">
-                            <i class="fas fa-code"></i>
-                            <h2>Skills</h2>
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <h2 id="skills-heading">Skills</h2>
                         </div>
                         
                         <div class="skill-list">
@@ -825,23 +257,50 @@
                             <span class="skill-item">Microservices</span>
                             <span class="skill-item">Agile</span>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+        </div> <!-- Close main-content -->
+    </div> <!-- Close main-wrapper -->
 
     <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/resume.js"></script>
     <script>
-        // Theme toggle functionality
-        // ...existing code...
+    // Responsive sidebar toggle
+    document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('sidebar-open');
+        document.body.classList.toggle('menu-open');
+    });
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
         
-        // Set current date in the cover letter
-        document.addEventListener('DOMContentLoaded', function() {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const currentDate = new Date().toLocaleDateString('en-US', options);
-            document.getElementById('current-date').textContent = currentDate;
-        });
+        if (window.innerWidth < 992 && 
+            sidebar.classList.contains('sidebar-open') && 
+            !sidebar.contains(event.target) && 
+            event.target !== sidebarToggle) {
+            sidebar.classList.remove('sidebar-open');
+            document.body.classList.remove('menu-open');
+        }
+    });
+    
+    // Initialize sidebar position for mobile
+    function initMobileLayout() {
+        const sidebar = document.querySelector('.sidebar');
+        if (window.innerWidth < 992) {
+            sidebar.classList.remove('sidebar-open');
+        } else {
+            sidebar.classList.remove('sidebar-open'); // Reset sidebar state on larger screens
+        }
+    }
+    
+    // Run on page load and resize
+    window.addEventListener('load', initMobileLayout);
+    window.addEventListener('resize', initMobileLayout);
     </script>
 </body>
 </html>

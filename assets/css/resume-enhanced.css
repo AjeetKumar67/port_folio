@@ -1,0 +1,582 @@
+/* 
+ * Enhanced Resume Styles
+ * This file contains all the styles for the resume page
+ * Organized by component and functionality
+ */
+
+/* --------------------
+ * 1. Root Variables 
+ * ------------------- */
+:root {
+    /* Color Palette */
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --text-muted: #666;
+    --card-bg: #f8f9fa;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --gradient-secondary: linear-gradient(135deg, #007adf 0%, #00ecbc 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.12);
+    --shadow-hard: 0 20px 40px rgba(0, 0, 0, 0.16);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --------------------
+ * 2. Base Styles
+ * ------------------- */
+body {
+    background-color: #f9fafc;
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(178, 224, 255, 0.1) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(233, 156, 255, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2563eb, #0891b2);
+}
+
+/* --------------------
+ * 3. Layout Components
+ * ------------------- */
+.resume-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-image: radial-gradient(circle at right top, rgba(52, 152, 219, 0.05), transparent 70%);
+    z-index: -1;
+}
+
+.resume-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.resume-wrapper:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px);
+}
+
+.resume-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.resume-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.text-center {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* --------------------
+ * 4. Section Headers
+ * ------------------- */
+.about-header h1 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.about-header h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 60px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* --------------------
+ * 5. Section Components
+ * ------------------- */
+.resume-section {
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+.resume-section:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-3px);
+}
+
+.resume-section:nth-child(1) { animation-delay: 0.1s; }
+.resume-section:nth-child(2) { animation-delay: 0.3s; }
+.resume-section:nth-child(3) { animation-delay: 0.5s; }
+.resume-section:nth-child(4) { animation-delay: 0.7s; }
+
+.resume-section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 20px 25px;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.resume-section-title i {
+    font-size: 24px;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 122, 223, 0.3);
+}
+
+.resume-section-title h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* --------------------
+ * 6. Timeline Components
+ * ------------------- */
+.timeline-item {
+    position: relative;
+    padding: 0 0 0 30px;
+    margin-bottom: 30px;
+    transition: var(--transition-smooth);
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--gradient-secondary);
+    box-shadow: 0 0 0 4px rgba(0, 122, 223, 0.1);
+}
+
+.timeline-item:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #00aeff;
+    box-shadow: 0 0 0 4px rgba(0, 174, 255, 0.1);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 5px 15px;
+    background: linear-gradient(to right, #f1f5f9, #e2e8f0);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    border-left: 3px solid #00aeff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.timeline-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1e40af;
+    letter-spacing: 0.5px;
+    transition: var(--transition-smooth);
+}
+
+.timeline-item:hover .timeline-title {
+    color: #00aeff;
+}
+
+.timeline-subtitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 500;
+}
+
+.timeline-content {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.timeline-content p {
+    font-size: 15px;
+}
+
+/* --------------------
+ * 7. Skills Component
+ * ------------------- */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    padding: 8px 18px;
+    background: white;
+    border-radius: 30px;
+    color: var(--text-color);
+    font-size: 14px;
+    transition: var(--transition-smooth);
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.skill-item:hover {
+    background: var(--gradient-secondary);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 174, 255, 0.2);
+    animation: glow 1.5s infinite;
+}
+
+.skill-item i {
+    margin-right: 5px;
+}
+
+/* --------------------
+ * 8. Profile Content
+ * ------------------- */
+.profile-content {
+    padding: 25px 30px;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.profile-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    letter-spacing: 0.2px;
+}
+
+/* --------------------
+ * 9. Cover Letter Styles
+ * ------------------- */
+.cover-letter {
+    padding: 25px 30px;
+    background: white;
+    border-radius: 8px;
+    position: relative;
+}
+
+.cover-letter::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e2e8f0' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 5C19.89 4.65 18.67 4.5 17.5 4.5C15.55 4.5 13.45 4.9 12 6C10.55 4.9 8.45 4.5 6.5 4.5C4.55 4.5 2.45 4.9 1 6V20.65C1 20.9 1.25 21.15 1.5 21.15C1.6 21.15 1.65 21.1 1.75 21.1C3.1 20.45 5.05 20 6.5 20C8.45 20 10.55 20.4 12 21.5C13.35 20.65 15.8 20 17.5 20C19.15 20 20.85 20.3 22.25 21.05C22.35 21.1 22.4 21.1 22.5 21.1C22.75 21.1 23 20.85 23 20.6V6C22.4 5.55 21.75 5.25 21 5ZM21 18.5C19.9 18.15 18.7 18 17.5 18C15.8 18 13.35 18.65 12 19.5V8C13.35 7.15 15.8 6.5 17.5 6.5C18.7 6.5 19.9 6.65 21 7V18.5Z'%3E%3C/path%3E%3C/svg%3E");
+    opacity: 0.1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
+
+.letter-header, .letter-body, .letter-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.letter-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.letter-header p:last-child {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.letter-body p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #334155;
+    letter-spacing: 0.2px;
+    text-align: justify;
+}
+
+.letter-body ul {
+    margin: 25px 0;
+    padding-left: 20px;
+    border-left: 3px solid #e2e8f0;
+}
+
+.letter-body ul li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #334155;
+}
+
+.letter-body ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.letter-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.letter-footer p:first-child {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #64748b;
+}
+
+.letter-footer p:last-child {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+
+.letter-footer p:last-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--gradient-secondary);
+    border-radius: 1px;
+}
+
+/* --------------------
+ * 10. Download Button
+ * ------------------- */
+.download-resume {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    color: #1e40af;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 14px 30px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.download-resume::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--gradient-secondary);
+    transition: 0.5s ease;
+    z-index: -1;
+}
+
+.download-resume:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-5px);
+}
+
+.download-resume:hover::before {
+    width: 100%;
+}
+
+.download-resume i {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.download-resume:hover i {
+    transform: translateY(2px);
+}
+
+/* --------------------
+ * 11. Animations
+ * ------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(0, 174, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 174, 255, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(0, 174, 255, 0.5); }
+}
+
+/* --------------------
+ * 12. Responsive Styles
+ * ------------------- */
+@media (max-width: 768px) {
+    .resume-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .resume-column {
+        min-width: 100%;
+    }
+    
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-content, 
+    .cover-letter {
+        padding: 20px;
+    }
+    
+    .resume-section-title i {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .resume-section-title h2 {
+        font-size: 20px;
+    }
+    
+    .letter-body ul {
+        padding-left: 15px;
+    }
+    
+    .letter-body ul li {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-wrapper {
+        padding: 15px;
+    }
+    
+    .about-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .skill-list {
+        gap: 8px;
+    }
+    
+    .skill-item {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    
+    .timeline-title {
+        font-size: 16px;
+    }
+    
+    .timeline-subtitle {
+        font-size: 14px;
+    }
+    
+    .timeline-content p {
+        font-size: 14px;
+    }
+}
