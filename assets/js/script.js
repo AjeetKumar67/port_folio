@@ -158,6 +158,13 @@ async function loadPage(pageName) {
         loader.classList.add('active');
         pageContent.style.opacity = '0';
         
+        // Ensure sidebar is closed on page load for mobile
+        const sidebar = document.querySelector('.sidebar');
+        if (window.innerWidth <= 992 && sidebar) {
+            sidebar.classList.remove('sidebar-open');
+            document.body.classList.remove('menu-open');
+        }
+        
         const response = await fetch(`pages/${pageName}.html`);
         const content = await response.text();
         
@@ -173,6 +180,12 @@ async function loadPage(pageName) {
             
             // Initialize page-specific animations
             initPageAnimations();
+            
+            // Reset any lingering styles that might cause spacing issues
+            document.querySelector('.main-content').style.marginLeft = '';
+            if (window.innerWidth <= 992) {
+                document.querySelector('.main-content').style.width = '100%';
+            }
         }, 500);
     } catch (error) {
         console.error('Error loading page:', error);
@@ -228,6 +241,28 @@ class PageManager {
             const page = window.location.hash.slice(1) || this.defaultPage;
             this.loadPage(page);
         });
+        
+        // Add window resize handler
+        window.addEventListener('resize', () => {
+            this.handleResize();
+        });
+        
+        // Initial resize handling
+        this.handleResize();
+    }
+    
+    handleResize() {
+        if (window.innerWidth <= 992) {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.classList.remove('sidebar-open');
+            }
+            const mainContent = document.querySelector('.main-content');
+            if (mainContent) {
+                mainContent.style.marginLeft = '0';
+                mainContent.style.width = '100%';
+            }
+        }
     }
 
     async loadPage(pageName) {

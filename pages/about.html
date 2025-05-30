@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me - Python Developer</title>
     <!-- Component CSS files -->
     <link rel="stylesheet" href="../assets/css/header-component.css">
     <link rel="stylesheet" href="../assets/css/sidebar-component.css">
@@ -15,6 +15,271 @@
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/mobile-fixes.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3776ab; /* Python blue */
+            --secondary-color: #ffde57; /* Python yellow */
+            --dark-bg: #1e293b;
+            --darker-bg: #0f172a;
+            --light-text: #f8fafc;
+            --highlight: #4dabf7;
+            --section-bg: rgba(15, 23, 42, 0.8);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--darker-bg), var(--dark-bg));
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .main-header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-container {
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 0 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-python-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .about-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-header h1 {
+            color: var(--highlight);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-header h1:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            bottom: -10px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--highlight));
+            border-radius: 2px;
+        }
+
+        .job-title {
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            color: var(--highlight);
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            margin-top: 1.5rem;
+        }
+
+        .about-description p, .additional-description p, .mission p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-item {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item .label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            min-width: 120px;
+        }
+
+        .info-item .value {
+            color: var(--light-text);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .expertise-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .expertise-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .expertise-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--highlight);
+        }
+
+        .expertise-description {
+            font-size: 1rem;
+            color: var(--light-text);
+        }
+
+        .mission {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2.5rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .mission-title {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: rgba(55, 118, 171, 0.2);
+            color: var(--light-text);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid rgba(55, 118, 171, 0.3);
+            transition: var(--transition);
+        }
+
+        .tech-badge:hover {
+            background: rgba(55, 118, 171, 0.4);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Include header component -->
@@ -47,17 +312,26 @@
     </header>
 
     <div class="about-container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-python-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h1 class="hero-title">Python Software Developer</h1>
+                <h2 class="hero-subtitle">Building robust, scalable, and efficient solutions</h2>
+            </div>
+        </div>
+
         <div class="about-wrapper">
             <div class="about-header">
-                <h2 class="section-title">ABOUT</h2>
-                <h1>LEARN MORE ABOUT ME</h1>
+                <h1>ABOUT ME</h1>
             </div>
 
-            <h2 class="job-title">Web Developer & Web Designer</h2>
+            <h2 class="job-title">Python Developer & Backend Specialist</h2>
 
             <div class="about-content">
                 <div class="about-description">
-                    <p>Hello and thanks for visiting my profile. As a web developer with two years of experience in Laravel framework, I have a strong foundation in PHP programming and web development. I am skilled in designing, developing, and maintaining web applications using Laravel, as well as integrating third-party APIs and libraries.</p>
+                    <p>Welcome to my portfolio! I'm a dedicated Python Software Developer with a passion for creating efficient, scalable, and maintainable code. With expertise in Python frameworks like Django and Flask, I specialize in developing robust backend systems, RESTful APIs, and data-driven applications that solve real-world problems.</p>
                 </div>
 
                 <div class="info-grid">
@@ -68,15 +342,15 @@
                         </div>
                         <div class="info-item">
                             <span class="label">Website:</span>
-                            <span class="value">laravelbuddy.in</span>
+                            <span class="value">ajeetyadav67.github.io/website/</span>
                         </div>
                         <div class="info-item">
                             <span class="label">Phone:</span>
-                            <span class="value">+91 9258383836</span>
+                            <span class="value">+91 9555481613</span>
                         </div>
                         <div class="info-item">
                             <span class="label">City:</span>
-                            <span class="value">Bareilly</span>
+                            <span class="value">Noida</span>
                         </div>
                     </div>
                     <div class="info-column">
@@ -86,21 +360,66 @@
                         </div>
                         <div class="info-item">
                             <span class="label">Degree:</span>
-                            <span class="value">master</span>
+                            <span class="value">Master of Computer Applications</span>
                         </div>
                         <div class="info-item">
                             <span class="label">Email:</span>
-                            <span class="value">viren616@yahoo.com</span>
+                            <span class="value">ajeetyadav6716@gmail.com</span>
                         </div>
                         <div class="info-item">
                             <span class="label">Freelance:</span>
-                            <span class="value">not_available</span>
+                            <span class="value">Available for projects</span>
                         </div>
                     </div>
                 </div>
 
+                <h3 class="section-title">My Expertise</h3>
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <div class="expertise-icon"><i class="fas fa-code"></i></div>
+                        <h4 class="expertise-title">Backend Development</h4>
+                        <p class="expertise-description">Building robust server-side applications with Python, Django, and Flask. Focused on clean architecture, performance, and scalability.</p>
+                    </div>
+                    <div class="expertise-card">
+                        <div class="expertise-icon"><i class="fas fa-database"></i></div>
+                        <h4 class="expertise-title">Database Design</h4>
+                        <p class="expertise-description">Designing and optimizing database schemas. Experienced with PostgreSQL, MySQL, MongoDB, and Redis for different use cases.</p>
+                    </div>
+                    <div class="expertise-card">
+                        <div class="expertise-icon"><i class="fas fa-server"></i></div>
+                        <h4 class="expertise-title">API Development</h4>
+                        <p class="expertise-description">Creating RESTful APIs and GraphQL endpoints with proper documentation, authentication, and performance optimization.</p>
+                    </div>
+                    <div class="expertise-card">
+                        <div class="expertise-icon"><i class="fas fa-cloud"></i></div>
+                        <h4 class="expertise-title">Cloud Services</h4>
+                        <p class="expertise-description">Deploying and managing applications on AWS, GCP, and Docker. Experience with CI/CD pipelines and infrastructure as code.</p>
+                    </div>
+                </div>
+
+                <div class="mission">
+                    <h3 class="mission-title">My Mission</h3>
+                    <p>My goal is to deliver high-quality software solutions that are not just functional but also maintainable, scalable, and secure. I believe in writing clean, well-tested code and continuously learning new technologies to stay at the forefront of software development practices.</p>
+                </div>
+
+                <h3 class="section-title">Technology Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Django</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">REST APIs</span>
+                    <span class="tech-badge">GraphQL</span>
+                    <span class="tech-badge">Git</span>
+                </div>
+
                 <div class="additional-description">
-                    <p>In my previous role as a web developer, I was responsible for building and maintaining multiple web applications using Laravel and managing their deployment to production environments. I also worked on optimizing website speed and performance, implementing security measures, and ensuring that websites were fully responsive and mobile-friendly.</p>
+                    <p>Throughout my career, I've focused on building efficient and maintainable systems. I value clean code architecture, thorough testing, and clear documentation. I enjoy collaborating with cross-functional teams and believe that the best solutions come from understanding both the technical requirements and the business goals of a project.</p>
                 </div>
             </div>
         </div>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Services</title>
+    <title>Services - Python Developer</title>
     <!-- Component CSS files -->
     <link rel="stylesheet" href="../assets/css/header-component.css">
     <link rel="stylesheet" href="../assets/css/sidebar-component.css">
@@ -12,12 +13,269 @@
     <link rel="stylesheet" href="../assets/css/about.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/components.css">
-    <link rel="stylesheet" href="../assets/css/services.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/mobile-fixes.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #3776ab; /* Python blue */
+            --secondary-color: #ffde57; /* Python yellow */
+            --dark-bg: #1e293b;
+            --darker-bg: #0f172a;
+            --light-text: #f8fafc;
+            --highlight: #4dabf7;
+            --section-bg: rgba(15, 23, 42, 0.8);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--darker-bg), var(--dark-bg));
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .main-header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-container {
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 0 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .page-header h1 {
+            color: var(--highlight);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-header h1:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            bottom: -10px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--highlight));
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--highlight);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+
+        .service-description {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-icon {
+            color: var(--secondary-color);
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), var(--highlight));
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-to-action {
+            background: linear-gradient(90deg, rgba(55, 118, 171, 0.3), rgba(77, 171, 247, 0.3));
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border: 1px solid rgba(77, 171, 247, 0.2);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .page-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Include header component -->
     <header class="main-header full-width">
         <div class="header-content">
             <div class="logo">
@@ -46,63 +304,243 @@
         </div>
     </header>
 
-    <div class="service-container">
-        <div class="service-header">
-            <h2 class="section-title">SERVICES</h2>
-            <h1 class="my-services">MY SERVICES</h1>
+    <div class="page-container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h1 class="hero-title">Professional Services</h1>
+                <h2 class="hero-subtitle">Reliable Python Development Solutions</h2>
+            </div>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="icon-container">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <h3>LOREM IPSUM</h3>
-                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+        <div class="page-wrapper">
+            <div class="page-header">
+                <h1>MY SERVICES</h1>
             </div>
 
-            <div class="service-card">
-                <div class="icon-container">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <h3>Sed ut perspiciatis</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <div class="intro-text">
+                <p>As a seasoned Python developer, I offer a comprehensive range of services designed to help businesses leverage the power of Python and modern development practices. From web applications and APIs to data science solutions and cloud deployments, I deliver high-quality, scalable, and maintainable code that solves real-world problems.</p>
             </div>
 
-            <div class="service-card">
-                <div class="icon-container">
-                    <i class="fas fa-clock"></i>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Application Development</h3>
+                    <div class="service-description">
+                        <p>Custom web applications built with modern Python frameworks that are scalable, secure, and user-friendly.</p>
+                    </div>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Django & Flask Applications</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Responsive UI/UX Integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Authentication & Authorization</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Performance Optimization</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="cta-button">Request Service</a>
                 </div>
-                <h3>Magni Dolores</h3>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title">API Development</h3>
+                    <div class="service-description">
+                        <p>Robust and well-documented APIs that enable seamless integration between services and third-party applications.</p>
+                    </div>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>RESTful API Design</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>GraphQL Implementation</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>API Security & Authentication</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Comprehensive Documentation</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="cta-button">Request Service</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="service-title">Data Science & Automation</h3>
+                    <div class="service-description">
+                        <p>Data-driven solutions and automated processes that help businesses make informed decisions and save time.</p>
+                    </div>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Data Analysis & Visualization</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Process Automation Scripts</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Machine Learning Integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Custom ETL Pipelines</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="cta-button">Request Service</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="service-title">Database Design</h3>
+                    <div class="service-description">
+                        <p>Efficient database architectures designed for performance, scalability, and data integrity.</p>
+                    </div>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Schema Design & Optimization</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>SQL & NoSQL Solutions</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Database Migration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Query Performance Tuning</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="cta-button">Request Service</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Deployment</h3>
+                    <div class="service-description">
+                        <p>Reliable deployment and infrastructure solutions that ensure your applications run smoothly in the cloud.</p>
+                    </div>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>AWS & GCP Deployment</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Docker Containerization</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>CI/CD Pipeline Setup</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Infrastructure as Code</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="cta-button">Request Service</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="service-title">Consulting & Code Review</h3>
+                    <div class="service-description">
+                        <p>Professional guidance and code review services to improve existing codebases and development practices.</p>
+                    </div>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Code Quality Assessment</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Architecture Consulting</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Performance Optimization</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Best Practices Training</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="cta-button">Request Service</a>
+                </div>
             </div>
 
-            <div class="service-card">
-                <div class="icon-container">
-                    <i class="fas fa-layer-group"></i>
-                </div>
-                <h3>Nemo Enim</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <div class="call-to-action">
+                <h3 class="cta-title">Ready to Start Your Project?</h3>
+                <p class="cta-description">Let's discuss how my Python development services can help bring your ideas to life. Whether you need a custom web application, data solution, or expert consulting, I'm here to help.</p>
+                <a href="contact.html" class="cta-button">Get in Touch</a>
             </div>
 
-            <div class="service-card">
-                <div class="icon-container">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3>Dele cardo</h3>
-                <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon-container">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Divera don</h3>
-                <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+            <div class="footer">
+                <p>&copy; 2023 Python Developer Services. All rights reserved.</p>
             </div>
         </div>
     </div>
 
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.querySelector('i').className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        });
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.querySelector('i').className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        
+        // Mobile navigation toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const headerNav = document.querySelector('.header-nav');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            headerNav.classList.toggle('active');
+            mobileNavToggle.querySelector('i').className = 
+                headerNav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+        });
+    </script>
     <script src="../assets/js/header.js"></script>
 </body>
+
 </html>
